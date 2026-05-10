@@ -12,11 +12,12 @@ This template seeds those with `<TODO>` placeholders and ships an interactive `/
 
 ## Use it
 
+> **First time?** This template needs `captain-picard` already provisioned in your Agent on Demand instance. If you haven't done that, do the one-time setup in **[PREREQUISITES.md](PREREQUISITES.md)** first.
+
 1. Click **Use this template** on GitHub (top-right of the repo page) → create your bus repo under whatever owner runs the product (e.g. `BinaryBourbon/birdwatcher`).
 2. Clone it locally and run `claude` in the working tree.
 3. Type `/bootstrap`. The skill interviews you (product, owner, vault, specialists, gates, initial slice), fills the templates, and offers to commit and push.
-4. Seed an AoD vault for the product owner in `aod-specs/vaults/` if one doesn't exist (see [`aod-specs/OPERATIONS.md`](https://github.com/jhgaylor/aod-specs/blob/main/OPERATIONS.md#seed-a-vault-for-the-project-once-per-project)).
-5. Run captain-picard against the bus repo:
+4. Run captain-picard against the bus repo:
 
    ```bash
    aod run captain-picard --vault <project-vault> -p \
@@ -37,7 +38,8 @@ This template seeds those with `<TODO>` placeholders and ships an interactive `/
 │   └── 0001-template.md     # ADR template, copy when writing a real ADR
 ├── .claude/skills/bootstrap/
 │   └── SKILL.md             # the /bootstrap skill
-└── README.md                # this file (replace post-bootstrap with your product's README)
+├── PREREQUISITES.md         # one-time aod-specs setup — survives /bootstrap
+└── README.md                # this file (replaced post-bootstrap with your product's README)
 ```
 
 ## After bootstrapping
