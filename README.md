@@ -1,8 +1,8 @@
 # captain-picard-template
 
-Bus-repo template for the [`captain-picard`](https://github.com/jhgaylor/aod-specs/blob/main/agents/teams/captain-picard/captain-picard.yml) Agent on Demand orchestrator.
+Bus-repo template for the [`captain-picard`](https://github.com/jhgaylor/agent-specs/blob/main/agents/teams/captain-picard/captain-picard.yml) Fountain orchestrator.
 
-`captain-picard` is the project-agnostic product engineering team lead from the [`jhgaylor/aod-specs`](https://github.com/jhgaylor/aod-specs) fleet. It expects every product it works on to seed three files at the bus-repo root:
+`captain-picard` is the project-agnostic product engineering team lead from the [`jhgaylor/agent-specs`](https://github.com/jhgaylor/agent-specs) fleet. It expects every product it works on to seed three files at the bus-repo root:
 
 - `OPERATING_MODEL.md` — the product, the team's roles, and the gate ladder.
 - `ROADMAP.md` — Now / Next / Gated lanes.
@@ -12,7 +12,7 @@ This template seeds those with `<TODO>` placeholders and ships an interactive `/
 
 ## Use it
 
-> **First time?** This template needs `captain-picard` already provisioned in your Agent on Demand instance. If you haven't done that, do the one-time setup in **[PREREQUISITES.md](PREREQUISITES.md)** first.
+> **First time?** This template needs `captain-picard` already provisioned in your Fountain workspace. If you haven't done that, do the one-time setup in **[PREREQUISITES.md](PREREQUISITES.md)** first.
 
 1. Click **Use this template** on GitHub (top-right of the repo page) → create your bus repo under whatever owner runs the product (e.g. `BinaryBourbon/birdwatcher`).
 2. Clone it locally and run `claude` in the working tree.
@@ -20,7 +20,7 @@ This template seeds those with `<TODO>` placeholders and ships an interactive `/
 4. Run captain-picard against the bus repo:
 
    ```bash
-   aod run captain-picard --vault <project-vault> -p \
+   fountain run captain-picard --vault <project-vault> -p \
      "repo_url=https://github.com/<owner>/<repo>
       vault_name=<project-vault>
       operating_doc_path=OPERATING_MODEL.md
@@ -38,7 +38,7 @@ This template seeds those with `<TODO>` placeholders and ships an interactive `/
 │   └── 0001-template.md     # ADR template, copy when writing a real ADR
 ├── .claude/skills/bootstrap/
 │   └── SKILL.md             # the /bootstrap skill
-├── PREREQUISITES.md         # one-time aod-specs setup — survives /bootstrap
+├── PREREQUISITES.md         # one-time agent-specs setup — survives /bootstrap
 └── README.md                # this file (replaced post-bootstrap with your product's README)
 ```
 

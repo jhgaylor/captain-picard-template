@@ -1,6 +1,6 @@
 # Operating Model
 
-This is the bible the [`captain-picard`](https://github.com/jhgaylor/aod-specs/blob/main/agents/teams/captain-picard/captain-picard.yml) orchestrator reads at the start of every conversation. Keep it tight — anything here that drifts from reality will mislead every dispatch downstream.
+This is the bible the [`captain-picard`](https://github.com/jhgaylor/agent-specs/blob/main/agents/teams/captain-picard/captain-picard.yml) orchestrator reads at the start of every conversation. Keep it tight — anything here that drifts from reality will mislead every dispatch downstream.
 
 Run `/bootstrap` in Claude Code to fill the `<TODO>` blocks below interactively. After that, edit by hand as the product evolves.
 
@@ -16,7 +16,7 @@ Run `/bootstrap` in Claude Code to fill the `<TODO>` blocks below interactively.
 
 ## Roles
 
-The captain-picard fleet (from [`jhgaylor/aod-specs`](https://github.com/jhgaylor/aod-specs)) has eight specialists. List below the subset this team uses and a one-line "when to dispatch" note for each:
+The captain-picard fleet (from [`jhgaylor/agent-specs`](https://github.com/jhgaylor/agent-specs)) has eight specialists. List below the subset this team uses and a one-line "when to dispatch" note for each:
 
 - <TODO: role-name> — <TODO: when to dispatch>
 - <TODO: role-name> — <TODO: when to dispatch>

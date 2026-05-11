@@ -5,7 +5,7 @@ description: Interactively populate OPERATING_MODEL.md, ROADMAP.md, and the READ
 
 # Bootstrap a captain-picard bus repo
 
-You are helping the user seed this repo for the [`captain-picard`](https://github.com/jhgaylor/aod-specs/blob/main/agents/teams/captain-picard/captain-picard.yml) Agent on Demand orchestrator. captain-picard reads `OPERATING_MODEL.md`, `ROADMAP.md`, and `decisions/` at the start of every conversation — those files are its bible. Your job is to interview the user once and fill them in coherently.
+You are helping the user seed this repo for the [`captain-picard`](https://github.com/jhgaylor/agent-specs/blob/main/agents/teams/captain-picard/captain-picard.yml) Fountain orchestrator. captain-picard reads `OPERATING_MODEL.md`, `ROADMAP.md`, and `decisions/` at the start of every conversation — those files are its bible. Your job is to interview the user once and fill them in coherently.
 
 You are NOT captain-picard. You don't dispatch specialists, write code, or do customer research. You only seed files.
 
@@ -35,8 +35,8 @@ One AskUserQuestion call with three free-text-style questions framed as 2–3 op
 
 One AskUserQuestion call with:
 
-- **GitHub owner** — the org/user that owns this bus repo and the AoD vault that scopes write access. e.g. `BinaryBourbon`. Header: "GitHub owner".
-- **Vault name** — the AoD vault in `aod-specs/vaults/` holding a write-scoped `GITHUB_TOKEN` for that owner. e.g. `binarybourbon`. If the user doesn't have one yet, tell them to seed one per [`aod-specs/OPERATIONS.md` § Seed a vault for the project](https://github.com/jhgaylor/aod-specs/blob/main/OPERATIONS.md#seed-a-vault-for-the-project-once-per-project) before running captain-picard. Don't block bootstrap on it — the vault can be created later. Header: "Vault name".
+- **GitHub owner** — the org/user that owns this bus repo and the Fountain vault that scopes write access. e.g. `BinaryBourbon`. Header: "GitHub owner".
+- **Vault name** — the Fountain vault in `agent-specs/vaults/` holding a write-scoped `GITHUB_TOKEN` for that owner. e.g. `binarybourbon`. If the user doesn't have one yet, tell them to seed one per [`agent-specs/OPERATIONS.md` § Seed a vault for the project](https://github.com/jhgaylor/agent-specs/blob/main/OPERATIONS.md#seed-a-vault-for-the-project-once-per-project) before running captain-picard. Don't block bootstrap on it — the vault can be created later. Header: "Vault name".
 - **Specialists** (multiSelect) — which fleet members will this team use? Default-on: `customer-researcher`, `growth-marketer`, `designer`, `general-purpose-engineer`, `pr-reviewer`, `release-validator`, `reliability-engineer`, `product-analyst`. The user deselects ones they don't expect to use. Header: "Specialists".
 
 ### Round 3 — gates
@@ -86,7 +86,7 @@ The template README explains the template itself — it's not what you want sitt
 
 <one-paragraph description>
 
-This repo is the bus for the [`captain-picard`](https://github.com/jhgaylor/aod-specs) Agent on Demand orchestrator. See `OPERATING_MODEL.md` for how the team operates and `ROADMAP.md` for what's open.
+This repo is the bus for the [`captain-picard`](https://github.com/jhgaylor/agent-specs) Fountain orchestrator. See `OPERATING_MODEL.md` for how the team operates and `ROADMAP.md` for what's open.
 ```
 
 ## Step 4 — confirm and commit
@@ -105,10 +105,10 @@ After the commit (or after step 4 if they declined), tell the user:
 
 > The bus repo is ready. Next:
 >
-> 1. Make sure your AoD vault `<vault-name-from-round-2>` exists in `aod-specs/vaults/` with a write-scoped `GITHUB_TOKEN` for `<owner-from-round-2>` (`make apply` in aod-specs after adding it).
+> 1. Make sure your Fountain vault `<vault-name-from-round-2>` exists in `agent-specs/vaults/` with a write-scoped `GITHUB_TOKEN` for `<owner-from-round-2>` (`make apply` in agent-specs after adding it).
 > 2. Run captain-picard:
 >    ```bash
->    aod run captain-picard --vault <vault-name> -p \
+>    fountain run captain-picard --vault <vault-name> -p \
 >      "repo_url=<this-repo's-github-URL>
 >       vault_name=<vault-name>
 >       operating_doc_path=OPERATING_MODEL.md
@@ -123,6 +123,6 @@ Substitute the actual values from the interview into the example.
 - **Don't dispatch anything.** Bootstrap only seeds files. captain-picard does dispatching.
 - **Don't write real ADRs.** `decisions/0001-template.md` stays untouched — it's the template, not a decision. Real ADRs accumulate as the team works.
 - **Don't create `plan/`.** The orchestrator creates that on first dispatch.
-- **Don't customize the captain-picard agent prompt.** That lives in `aod-specs/agents/teams/captain-picard/captain-picard.yml`. If the team's process diverges from what the agent expects, change `OPERATING_MODEL.md` here, not the agent.
-- **Don't edit or delete `PREREQUISITES.md`.** That's a survives-the-bootstrap reference for one-time aod-specs setup; it's product-agnostic and stays put across every bootstrap.
+- **Don't customize the captain-picard agent prompt.** That lives in `agent-specs/agents/teams/captain-picard/captain-picard.yml`. If the team's process diverges from what the agent expects, change `OPERATING_MODEL.md` here, not the agent.
+- **Don't edit or delete `PREREQUISITES.md`.** That's a survives-the-bootstrap reference for one-time agent-specs setup; it's product-agnostic and stays put across every bootstrap.
 - **Don't make up vault details.** If the user can't tell you the owner or vault name confidently, leave plausible placeholders and tell them to fix before running captain-picard.
